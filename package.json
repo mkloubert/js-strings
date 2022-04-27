@@ -13,6 +13,8 @@
   "scripts": {
     "build": "del lib && tsc",
     "docs": "del docs && typedoc --out docs src",
+    "lint": "eslint --ext .ts src",
+    "lint:fix": "eslint --fix --ext .ts src",
     "sandbox": "nodemon --watch 'sandbox.ts' --exec node -r ts-node/register --inspect=0.0.0.0:9229 sandbox.ts",
     "test": "jest --no-cache"
   },
@@ -81,8 +83,11 @@
   "devDependencies": {
     "@types/jest": "27.0.2",
     "@types/supertest": "2.0.11",
+    "@typescript-eslint/eslint-plugin": "5.21.0",
+    "@typescript-eslint/parser": "5.21.0",
     "babel-jest": "27.5.1",
     "del-cli": "4.0.1",
+    "eslint": "8.14.0",
     "jest": "27.5.1",
     "nodemon": "2.0.15",
     "supertest": "6.2.3",

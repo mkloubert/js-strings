@@ -22,4 +22,4 @@
   SOFTWARE.
 *******************************************************************************/
 
-export type List<T extends any = any> = T[] | Iterable<T> | IterableIterator<T>;
+export type List<T = any> = T[] | Iterable<T> | IterableIterator<T>;

@@ -145,7 +145,7 @@ export function formatArray(formatStr: string, argList: List<any>): string {
     args = [...argList];
   }
 
-  return formatStr.replace(/{(\d+)(\:)?([^}]*)}/gm,
+  return formatStr.replace(/{(\d+)(:)?([^}]*)}/gm,
     (match: string, index: string | number, separator: string, formatterName: string) => {
       index = parseInt(index as string);
 
