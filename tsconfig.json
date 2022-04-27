@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "allowUnreachableCode": false,
+    "esModuleInterop": true,
+    "jsx": "react-native",
+    "newLine": "lf",
+    "noUnusedLocals": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "pretty": false,
+    "removeComments": false,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "stripInternal": true,
+    "outDir": "lib",
+    "rootDir": "src",
+    "target": "es2019",
+    "lib": ["es2019"],
+    "declaration": true,
+    "sourceMap": false
+  },
+  "exclude": ["node_modules"]
+}
