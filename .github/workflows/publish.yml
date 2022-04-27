@@ -26,3 +26,5 @@ jobs:
         run: npm run build
       - name: Generate documentation
         run: npm run docs
+      - name: Publish package
+        run: npm publish
