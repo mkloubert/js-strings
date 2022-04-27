@@ -23,7 +23,7 @@ import { asString } from "@marcelkloubert/strings"
 
 const myObject = {
   toString: () => "!!!myObject!!!",
-};
+}
 
 asString(12)  // "12"
 asString("")  // ""
@@ -49,7 +49,7 @@ import { formatArray } from "@marcelkloubert/strings"
 
 function* asGenerator(...args: any[]) {
   for (const a of args) {
-    yield a;
+    yield a
   }
 }
 
