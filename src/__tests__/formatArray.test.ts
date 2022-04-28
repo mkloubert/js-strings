@@ -1,7 +1,7 @@
-/*******************************************************************************
+/**
   The MIT License (MIT)
 
-  Copyright (c) 2022-present Marcel Joachim Kloubert
+  Copyright (c) 2022-present Marcel Joachim Kloubert (https://marcel.coffee)
 
   Permission is hereby granted, free of charge, to any person obtaining a copy
   of this software and associated documentation files (the "Software"), to deal
@@ -20,30 +20,30 @@
   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
   SOFTWARE.
-*******************************************************************************/
+**/
 
-import { formatArray } from "..";
-import type { List } from "../types";
+import { formatArray, } from "..";
+import type { List, } from "../types";
 
 type AsListAction = () => List<any>;
 
 const strings = [{
-  formatStr: "{1}, {0}",
-  args: ["Marcel", "Kloubert"],
-  expected: "Kloubert, Marcel"
+  "formatStr": "{1}, {0}",
+  "args": ["Marcel", "Kloubert",],
+  "expected": "Kloubert, Marcel",
 }, {
-  formatStr: "{1}, {0}",
-  args: [undefined, "Kloubert"],
-  expected: "Kloubert, {0}"
+  "formatStr": "{1}, {0}",
+  "args": [undefined, "Kloubert",],
+  "expected": "Kloubert, {0}",
 }, {
-  formatStr: "{1}, {0}",
-  args: ["Marcel", null],
-  expected: ", Marcel"
+  "formatStr": "{1}, {0}",
+  "args": ["Marcel", null,],
+  "expected": ", Marcel",
 }, {
-  formatStr: "{1:upper,trim}, {0:lower}",
-  args: ["Marcel", " Kloubert  "],
-  expected: "KLOUBERT, marcel"
-}];
+  "formatStr": "{1:upper,trim}, {0:lower}",
+  "args": ["Marcel", " Kloubert  ",],
+  "expected": "KLOUBERT, marcel",
+},];
 
 function* asGenerator(arr: any[]) {
   for (const item of arr) {
@@ -53,11 +53,11 @@ function* asGenerator(arr: any[]) {
 
 describe("formatArray() function", () => {
   it.each(strings)("should make a string from a format string with arguments", (str) => {
-    const { formatStr, args, expected } = str;
+    const { formatStr, args, expected, } = str;
 
     const asListActions: AsListAction[] = [
       () => args,
-      () => asGenerator(args)
+      () => asGenerator(args),
     ];
 
     for (const asList of asListActions) {

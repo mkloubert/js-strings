@@ -22,5 +22,9 @@
   SOFTWARE.
 **/
 
-export * from "./classes";
-export * from "./functions";
+module.exports = {
+  "extends": "marcel",
+  "rules": {
+    // Additional, per-project rules...
+  },
+};

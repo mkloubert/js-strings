@@ -1,7 +1,7 @@
-/*******************************************************************************
+/**
   The MIT License (MIT)
 
-  Copyright (c) 2022-present Marcel Joachim Kloubert
+  Copyright (c) 2022-present Marcel Joachim Kloubert (https://marcel.coffee)
 
   Permission is hereby granted, free of charge, to any person obtaining a copy
   of this software and associated documentation files (the "Software"), to deal
@@ -20,15 +20,15 @@
   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
   SOFTWARE.
-*******************************************************************************/
+**/
 
-import { List } from "../types";
+import { List, } from "../types";
 
 /**
  * A string formatter.
- * 
+ *
  * @param {any} value The input value.
- * 
+ *
  * @returns {any} The output value.
  */
 export type StringFormatter = (value: any) => any;
@@ -42,24 +42,24 @@ export type StringFormatters = Record<string, StringFormatter>;
  * List of string formatters.
  */
 export const stringFormatters: StringFormatters = {
-  lower: (value) => asString(value).toLowerCase(),
-  ltrim: (value) => asString(value).trimStart(),
-  rtrim: (value) => asString(value).trimEnd(),
-  trim: (value) => asString(value).trim(),
-  upper: (value) => asString(value).toUpperCase(),
+  "lower": (value) => asString(value).toLowerCase(),
+  "ltrim": (value) => asString(value).trimStart(),
+  "rtrim": (value) => asString(value).trimEnd(),
+  "trim": (value) => asString(value).trim(),
+  "upper": (value) => asString(value).toUpperCase(),
 };
 
 /**
  * Converts a value to its string representation.
- * 
+ *
  * @example
  * ```
  * import { asString } from "@marcelkloubert/strings"
- * 
+ *
  * const myObject = {
  *   toString: () => "!!!myObject!!!",
  * };
- * 
+ *
  * asString(12)  // "12"
  * asString("")  // ""
  * asString(null)  // ""
@@ -103,14 +103,14 @@ ${value.stack ?? ""}`.trim();
  * @example
  * ```
  * import { format } from "@marcelkloubert/strings"
- * 
+ *
  * format("{1}, {0}", "Marcel", "Kloubert")  // "Kloubert, Marcel"
  * format("{1:upper}, {0:lower,trim}", "Marcel", "  Kloubert  ")  // "kloubert, MARCEL"
  * ```
- * 
- * @param {string} formatStr The format string. 
+ *
+ * @param {string} formatStr The format string.
  * @param {any[]} [args] One or more argument.
- * 
+ *
  * @returns {string} The formatted string.
  */
 export function format(formatStr: string, ...args: any[]): string {
@@ -123,14 +123,14 @@ export function format(formatStr: string, ...args: any[]): string {
  * @example
  * ```
  * import { formatArray } from "@marcelkloubert/strings"
- * 
+ *
  * formatArray("{1}, {0}", ["Marcel", "Kloubert"])  // "Kloubert, Marcel"
  * formatArray("{1:upper}, {0:lower,trim}", ["Marcel", "  Kloubert  "])  // "kloubert, MARCEL"
  * ```
- * 
- * @param {string} formatStr The format string. 
+ *
+ * @param {string} formatStr The format string.
  * @param {List<any>} [argList] One or more argument.
- * 
+ *
  * @returns {string} The formatted string.
  */
 export function formatArray(formatStr: string, argList: List<any>): string {
@@ -142,7 +142,7 @@ export function formatArray(formatStr: string, argList: List<any>): string {
   if (Array.isArray(argList)) {
     args = argList;
   } else {
-    args = [...argList];
+    args = [...argList,];
   }
 
   return formatStr.replace(/{(\d+)(:)?([^}]*)}/gm,

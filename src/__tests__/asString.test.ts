@@ -1,7 +1,7 @@
-/*******************************************************************************
+/**
   The MIT License (MIT)
 
-  Copyright (c) 2022-present Marcel Joachim Kloubert
+  Copyright (c) 2022-present Marcel Joachim Kloubert (https://marcel.coffee)
 
   Permission is hereby granted, free of charge, to any person obtaining a copy
   of this software and associated documentation files (the "Software"), to deal
@@ -20,9 +20,9 @@
   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
   SOFTWARE.
-*******************************************************************************/
+**/
 
-import { asString } from "..";
+import { asString, } from "..";
 
 interface Value {
   value: any;
@@ -30,38 +30,38 @@ interface Value {
 }
 
 const values: Value[] = [{
-  value: null,
-  expected: ""
+  "value": null,
+  "expected": "",
 }, {
-  value: undefined,
-  expected: ""
+  "value": undefined,
+  "expected": "",
 }, {
-  value: false,
-  expected: "false"
+  "value": false,
+  "expected": "false",
 }, {
-  value: true,
-  expected: "true"
+  "value": true,
+  "expected": "true",
 }, {
-  value: 666,
-  expected: "666"
+  "value": 666,
+  "expected": "666",
 }, {
-  value: Symbol("Foo"),
-  expected: "Symbol(Foo)"
+  "value": Symbol("Foo"),
+  "expected": "Symbol(Foo)",
 }, {
-  value: {
-    toString: () => "!!!fOO!!!"
+  "value": {
+    "toString": () => "!!!fOO!!!",
   },
-  expected: "!!!fOO!!!"
+  "expected": "!!!fOO!!!",
 }, {
-  value: new Error("Foo error"),
-  expected: (value: string) => {
-    return value.startsWith(`ERROR [Error]: Foo error`);
+  "value": new Error("Foo error"),
+  "expected": (value: string) => {
+    return value.startsWith("ERROR [Error]: Foo error");
   },
-}];
+},];
 
 describe("asString() function", () => {
   it.each(values)("should make a string from a value", (item) => {
-    const { value, expected } = item;
+    const { value, expected, } = item;
 
     const result = asString(value);
 
